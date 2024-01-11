@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import WeatherInformation from './src/weather-information';
@@ -15,10 +15,12 @@ const styles = StyleSheet.create({
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <View style={styles.container}>
-        <WeatherInformation />
-      </View>
-    </SafeAreaProvider>
+    <SafeAreaView>
+      <SafeAreaProvider>
+        <View style={styles.container}>
+          <WeatherInformation />
+        </View>
+      </SafeAreaProvider>
+    </SafeAreaView>
   );
 }
